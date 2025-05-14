@@ -1,6 +1,6 @@
 <template>
   <div class="help-page">
-    <van-nav-bar title="幫助中心" fixed placeholder />
+    <van-nav-bar title="幫助中心" fixed placeholder left-arrow @click-left="$router.back()" />
     <van-cell-group>
       <van-cell
         v-for="item in helpList"

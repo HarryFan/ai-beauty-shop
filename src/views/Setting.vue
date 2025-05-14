@@ -1,6 +1,6 @@
 <template>
   <div class="setting-page">
-    <van-nav-bar title="設置" fixed placeholder />
+    <van-nav-bar title="設置" fixed placeholder left-arrow @click-left="$router.back()" />
     <van-cell-group>
       <van-cell title="推播通知" is-link>
         <template #right-icon>

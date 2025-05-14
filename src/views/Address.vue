@@ -1,6 +1,6 @@
 <template>
   <div class="address-page">
-    <van-nav-bar title="收貨地址" fixed placeholder />
+    <van-nav-bar title="收貨地址" fixed placeholder left-arrow @click-left="$router.back()" />
     <van-cell-group>
       <van-cell v-for="item in addressList" :key="item.id" class="address-card">
         <template #title>

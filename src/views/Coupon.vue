@@ -1,6 +1,6 @@
 <template>
   <div class="coupon-page">
-    <van-nav-bar title="我的優惠券" fixed placeholder />
+    <van-nav-bar title="我的優惠券" fixed placeholder left-arrow @click-left="$router.back()" />
     <van-tabs v-model:active="activeTab" sticky offset-top="46px">
       <van-tab title="未使用" name="unused">
         <van-cell-group>

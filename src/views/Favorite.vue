@@ -1,6 +1,6 @@
 <template>
   <div class="favorite-page">
-    <van-nav-bar title="我的收藏" fixed placeholder />
+    <van-nav-bar title="我的收藏" fixed placeholder left-arrow @click-left="$router.back()" />
     <van-list :finished="finished" :immediate-check="false">
       <van-card
         v-for="item in favoriteList"
