@@ -36,29 +36,14 @@
     </van-grid>
 
     <!-- 商品展示區 -->
-    <div class="products">
-      <van-grid :column-num="2" :gutter="10">
-        <van-grid-item v-for="product in products" :key="product.id">
-          <van-card
-            :price="product.price"
-            :title="product.name"
-            :thumb="product.image"
-            class="product-card"
-          >
-            <template #tags>
-              <van-tag v-if="product.isNew" type="danger">新品</van-tag>
-            </template>
-          </van-card>
-        </van-grid-item>
-      </van-grid>
-    </div>
+    <router-view />
 
     <!-- 底部導航欄 -->
     <van-tabbar v-model="activeTab" route>
       <van-tabbar-item icon="shop-o" to="/">商城</van-tabbar-item>
       <van-tabbar-item icon="apps-o" to="/category">分類</van-tabbar-item>
       <van-tabbar-item icon="chat-o" to="/message">消息</van-tabbar-item>
-      <van-tabbar-item icon="user-o" to="/user">個人</van-tabbar-item>
+      <van-tabbar-item icon="user-o" to="/profile">個人</van-tabbar-item>
     </van-tabbar>
   </div>
 </template>
