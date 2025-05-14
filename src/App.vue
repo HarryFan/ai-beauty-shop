@@ -1,52 +1,7 @@
 <template>
-  <div class="app">
-    <!-- 頂部導航區 -->
-    <van-nav-bar
-      title="春季特賣"
-      fixed
-      placeholder
-    >
-      <template #right>
-        <van-dropdown-menu>
-          <van-dropdown-item v-model="sortValue" :options="sortOptions" />
-        </van-dropdown-menu>
-      </template>
-    </van-nav-bar>
-
-    <!-- 輪播廣告區 -->
-    <van-swipe class="banner" :autoplay="3000" indicator-color="#1989fa">
-      <van-swipe-item v-for="(banner, index) in banners" :key="index">
-        <van-image
-          :src="banner.image"
-          :alt="banner.title"
-          fit="cover"
-          class="banner-image"
-        />
-      </van-swipe-item>
-    </van-swipe>
-
-    <!-- 分類導航區 -->
-    <van-grid :column-num="4" :border="false" class="category-nav">
-      <van-grid-item
-        v-for="category in categories"
-        :key="category.id"
-        :text="category.name"
-        @click="handleCategoryClick(category)"
-      />
-    </van-grid>
-
-    <!-- 商品展示區 -->
-    <router-view />
-
-    <!-- 底部導航欄 -->
-    <van-tabbar v-model="activeTab" route>
-      <van-tabbar-item icon="shop-o" to="/">商城</van-tabbar-item>
-      <van-tabbar-item icon="apps-o" to="/category">分類</van-tabbar-item>
-      <van-tabbar-item icon="chat-o" to="/message">消息</van-tabbar-item>
-      <van-tabbar-item icon="user-o" to="/profile">個人</van-tabbar-item>
-    </van-tabbar>
-  </div>
+  <router-view />
 </template>
+
 
 <script setup>
 import { ref } from 'vue'

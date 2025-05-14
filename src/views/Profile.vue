@@ -34,11 +34,11 @@
 
     <!-- 功能列表 -->
     <van-cell-group title="我的服務" class="feature-group">
-      <van-cell v-for="item in features" :key="item.id" :title="item.title" :icon="item.icon" is-link />
+      <van-cell v-for="item in features" :key="item.id" :title="item.title" :icon="item.icon" is-link :to="item.to" />
     </van-cell-group>
 
     <van-cell-group title="其他服務" class="feature-group">
-      <van-cell v-for="item in otherFeatures" :key="item.id" :title="item.title" :icon="item.icon" is-link />
+      <van-cell v-for="item in otherFeatures" :key="item.id" :title="item.title" :icon="item.icon" is-link :to="item.to" />
     </van-cell-group>
 
     <van-tabbar v-model="activeTab" route>
@@ -72,14 +72,14 @@ const orderStatus = [
 
 // 功能列表
 const features = [
-  { id: 1, title: '我的優惠券', icon: 'coupon-o' },
-  { id: 2, title: '收貨地址', icon: 'location-o' },
-  { id: 3, title: '我的收藏', icon: 'star-o' }
+  { id: 1, title: '我的優惠券', icon: 'coupon-o', to: '/coupon' },
+  { id: 2, title: '收貨地址', icon: 'location-o', to: '/address' },
+  { id: 3, title: '我的收藏', icon: 'star-o', to: '/favorite' }
 ]
 
 const otherFeatures = [
-  { id: 1, title: '幫助中心', icon: 'question-o' },
-  { id: 2, title: '設置', icon: 'setting-o' }
+  { id: 1, title: '幫助中心', icon: 'question-o', to: '/help' },
+  { id: 2, title: '設置', icon: 'setting-o', to: '/setting' }
 ]
 </script>
 

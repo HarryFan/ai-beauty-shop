@@ -29,25 +29,24 @@
     <van-grid :column-num="3" :border="false">
       <van-grid-item v-for="category in categories" :key="category.id" :text="category.name">
         <template #icon>
-          <van-icon :name="category.icon" :size="28" />
+          <i :class="['fa', category.icon]" style="font-size:28px;color:#1989fa" />
         </template>
       </van-grid-item>
     </van-grid>
 
     <!-- 商品展示區 -->
-    <div class="products">
-      <van-card
-        v-for="product in products"
-        :key="product.id"
-        :price="product.price"
-        :title="product.title"
-        :thumb="product.image"
-      >
-        <template #tags>
-          <van-icon name="like-o" size="20" />
-        </template>
-      </van-card>
-    </div>
+    <van-grid :column-num="2" :border="false" class="product-grid">
+      <van-grid-item v-for="product in products" :key="product.id">
+        <div class="product-card">
+          <van-image :src="product.image" width="100%" height="120" fit="cover" class="product-image" />
+          <div class="product-title">{{ product.title }}</div>
+          <div class="product-bottom">
+            <span class="product-price">${{ product.price }}</span>
+            <van-icon name="like-o" size="18" color="#ffb300" />
+          </div>
+        </div>
+      </van-grid-item>
+    </van-grid>
 
     <!-- 底部導航欄 -->
     <van-tabbar v-model="activeTab" route>
@@ -82,9 +81,9 @@ const banners = ref([
 
 // 分類數據
 const categories = ref([
-  { id: 1, name: '唇膏', icon: 'gift-o' },
-  { id: 2, name: '眼影', icon: 'eye-o' },
-  { id: 3, name: '卸妝', icon: 'clear' }
+  { id: 1, name: '唇膏', icon: 'fa-solid fa-face-kiss-wink-heart' },
+  { id: 2, name: '眼影', icon: 'fa-regular fa-eye' },
+  { id: 3, name: '卸妝', icon: 'fa-solid fa-droplet' }
 ])
 
 // 商品數據
@@ -106,6 +105,36 @@ const products = ref([
     title: '溫和卸妝水',
     price: '199.00',
     image: '/src/assets/images/simple03.jpeg'
+  },
+  {
+    id: 4,
+    title: '亮白精華液',
+    price: '499.00',
+    image: '/src/assets/images/simple04.jpeg'
+  },
+  {
+    id: 5,
+    title: '修護保濕乳',
+    price: '350.00',
+    image: '/src/assets/images/simple05.jpeg'
+  },
+  {
+    id: 6,
+    title: '極細防水眼線液',
+    price: '220.00',
+    image: '/src/assets/images/simple06.jpeg'
+  },
+  {
+    id: 7,
+    title: '柔霧腮紅',
+    price: '180.00',
+    image: '/src/assets/images/simple07.jpeg'
+  },
+  {
+    id: 8,
+    title: '植萃潔顏慕斯',
+    price: '260.00',
+    image: '/src/assets/images/simple08.jpeg'
   }
 ])
 </script>
