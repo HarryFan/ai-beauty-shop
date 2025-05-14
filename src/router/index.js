@@ -43,6 +43,26 @@ const routes = [
     component: () => import('../views/Help.vue')
   },
   {
+    path: '/help/shopping-flow',
+    name: 'HelpShoppingFlow',
+    component: () => import('../views/help/ShoppingFlow.vue')
+  },
+  {
+    path: '/help/payment-method',
+    name: 'HelpPaymentMethod',
+    component: () => import('../views/help/PaymentMethod.vue')
+  },
+  {
+    path: '/help/delivery-info',
+    name: 'HelpDeliveryInfo',
+    component: () => import('../views/help/DeliveryInfo.vue')
+  },
+  {
+    path: '/help/return-policy',
+    name: 'HelpReturnPolicy',
+    component: () => import('../views/help/ReturnPolicy.vue')
+  },
+  {
     path: '/setting',
     name: 'Setting',
     component: () => import('../views/Setting.vue')
