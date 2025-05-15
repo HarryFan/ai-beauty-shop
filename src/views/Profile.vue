@@ -1,7 +1,7 @@
 <template>
   <div class="profile">
-    <van-nav-bar title="我的" fixed placeholder />
-    
+    <van-nav-bar title="我的" fixed placeholder left-arrow @click-left="$router.back()"  />
+
     <!-- 用戶信息卡片 -->
     <div class="user-card">
       <div class="user-info">
